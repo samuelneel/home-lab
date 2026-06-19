@@ -15,9 +15,6 @@ administration, endpoint management, log collection, and threat detection.
 - Detecting and investigating a simulated attack
 
 ## Architecture
-[Insert a simple diagram here — draw.io is free. Show: Domain Controller (Windows
-Server), one or more Windows client VMs joined to the domain, and the SIEM VM,
-all on the same virtual network.]
 
 ## Tools & Technologies
 - **Hypervisor:** VirtualBox (free)
@@ -36,8 +33,6 @@ all on the same virtual network.]
 6. Practiced help desk workflows: created a new-hire account, reset a password,
    and unlocked a locked-out account.
 
-[Insert screenshots: domain creation, the OU structure, a domain-joined client,
-a password reset.]
 
 ## Phase 2 — SOC Detection
 1. Deployed the SIEM VM and forwarded Windows event logs from the client and DC.
@@ -48,11 +43,8 @@ a password reset.]
 4. Documented the investigation: what the alert caught, how I confirmed it, and
    what a defender would do next.
 
-[Insert screenshots: log forwarding working, the failed-logon events, the alert.]
 
 ## Key Takeaways
-[2–4 sentences in your own words on what you learned — what was harder than
-expected, what clicked. This section is what interviewers actually read.]
 
 ## Future Improvements
 - Add a firewall (pfSense) and segment the network

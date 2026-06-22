@@ -14,8 +14,8 @@ Active Directory with an OU structure, users, and groups — the identity backbo
 
 ## 1. Create the VM
 
-- **New** → name `DC01`, version **Windows 2022 (64-bit)**, with **Skip Unattended Installation**
-  checked so the OS could be installed manually.
+- **New** → name `DC01`, version **Windows 2022 (64-bit)**, with **Proceed with Unattended Installation**
+  unchecked so the OS could be installed manually.
 - Allocated 4096 MB RAM, 2 processors, and a 50 GB dynamically allocated disk.
 - Attached **Adapter 1** to the **NAT Network `SamLabNet`**.
 

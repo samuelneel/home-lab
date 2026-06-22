@@ -20,3 +20,13 @@ Active Directory with an OU structure, users, and groups — the identity backbo
 - Attached **Adapter 1** to the **NAT Network `SamLabNet`**.
 
 ![DC01 Adapter 1 attached to NAT Network SamLabNet](../screenshots/02-dc/adapter-nat-network.png)
+
+### 2.2 Install the OS
+1. Boot the VM → choose language → **Install now**.
+2. Select **Windows Server 2022 Standard (Desktop Experience)** — the GUI edition, *not* the
+   bare "Server Core" option.
+3. **Custom install** → select the disk → install → set the **Administrator** password.
+
+![Selecting Windows Server 2022 Standard Edition](../screenshots/02-dc/edition-desktop-experience.png)
+ 
+4. Install **VirtualBox Guest Additions** for better display/clipboard.

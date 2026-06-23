@@ -59,20 +59,20 @@ Active Directory with an OU structure, users, and groups — the identity backbo
 
 ![Add a new forest](../screenshots/02-dc/new-forest.png)
 
-![Administrator new login](..screenshots/02-dc/domain-login.png)
+![Administrator new login](../screenshots/02-dc/domain-login.png)
  
 ### 2.6 Verify and populate AD
 1. **Server Manager → Tools → Active Directory Users and Computers** (`dsa.msc`).
 
-![SamLab Tree](..screenshots/02-dc/aduc-tree.png)
+![SamLab Tree](../screenshots/02-dc/aduc-tree.png)
  
 2. Create an OU structure, e.g. an OU `SamLab` containing sub-OUs `Users`, `Workstations`, `Groups`.
 3. Create 2–3 test users (e.g. `jdoe`, `asmith`) with passwords.
 
-![Test Users](..screenshots/02-dc/ou-users.png)
+![Test Users](../screenshots/02-dc/ou-users.png)
  
 4. **Tools → DNS** → expand Forward Lookup Zones → `samlab.local` to confirm the
    SRV records AD created. If external resolution is flaky, add a forwarder (e.g. `8.8.8.8`)
    under the DNS server's **Forwarders** tab.
 
-![DNS Configured](..screenshots/02-dc/dns-zone.png)
+![DNS Configured](../screenshots/02-dc/dns-zone.png)

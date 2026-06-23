@@ -44,7 +44,7 @@ desk ticketing, log collection, and threat detection.
 | Client            | Windows 11, `CLIENT01`                              |
 | Domain            | `samlab.local` (NetBIOS: `SAMLAB`)                  |
 | Network           | VirtualBox NAT Network `SamLabNet`, `10.10.10.0/24` |
-| Ticketing         | Spiceworks Cloud Help Desk (SaaS — no VM)           |
+| Ticketing         | Spiceworks Cloud Help Desk                          |
 
 | Host     | IP            | Mask            | Gateway      | DNS           |
 |----------|---------------|-----------------|--------------|---------------|

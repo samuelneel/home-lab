@@ -1,6 +1,6 @@
 # Active Directory & SOC Detection Home Lab
 
-> 🚧 **Status:** In progress — Phase 1 (Active Directory & Help Desk) underway.
+> 🚧 **Status:** In progress — Phase 2 (SOC Detection) underway.
 
 A virtualized lab simulating a small corporate network, built to practice the core skills behind
 IT support and security operations: Active Directory administration, endpoint management, help

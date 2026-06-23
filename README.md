@@ -67,7 +67,7 @@ desk ticketing, log collection, and threat detection.
 - [x] Built an OU structure and provisioned test users and security groups in Active Directory
 - [x] Joined a Windows 11 client (`CLIENT01`) to the domain
 - [x] Configured a Group Policy (e.g., password complexity, login banner)
-- [ ] Stood up Spiceworks Cloud Help Desk and resolved a simulated account-lockout ticket end to end (open → assign → fix in AD → close)
+- [x] Stood up Spiceworks Cloud Help Desk and resolved a simulated account-lockout ticket end to end (open → assign → fix in AD → close)
 
 ## Phase 2 — SOC Detection (planned)
 

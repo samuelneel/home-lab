@@ -66,7 +66,7 @@ desk ticketing, log collection, and threat detection.
 - [x] Installed Windows Server 2022 and promoted it to a domain controller (`DC01`), creating the forest `samlab.local`
 - [x] Built an OU structure and provisioned test users and security groups in Active Directory
 - [x] Joined a Windows 11 client (`CLIENT01`) to the domain
-- [ ] Configured a Group Policy (e.g., password complexity, login banner)
+- [x] Configured a Group Policy (e.g., password complexity, login banner)
 - [ ] Stood up Spiceworks Cloud Help Desk and resolved a simulated account-lockout ticket end to end (open → assign → fix in AD → close)
 
 ## Phase 2 — SOC Detection (planned)

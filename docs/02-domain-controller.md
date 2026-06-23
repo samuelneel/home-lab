@@ -76,3 +76,20 @@ Active Directory with an OU structure, users, and groups — the identity backbo
    under the DNS server's **Forwarders** tab.
 
 ![DNS Configured](../screenshots/02-dc/dns-zone.png)
+
+### 2.7 Configure a Group Policy (logon warning banner)
+
+1. Opened **Group Policy Management** (Server Manager → Tools → Group Policy Management).
+2. Right-clicked the `samlab.local` domain → **Create a GPO in this domain, and Link it here…** → named it `Logon Banner Policy`.
+
+![Logon Banner Policy GPO linked to the domain](../screenshots/02-dc/gpo-created.png)
+
+3. Edited the GPO → **Computer Configuration → Policies → Windows Settings → Security Settings → Local Policies → Security Options**, and defined:
+   - **Interactive logon: Message title for users attempting to log on** → `Authorized Use Only`
+   - **Interactive logon: Message text for users attempting to log on** → a warning that the system is for authorized users only and activity may be monitored.
+
+![Logon banner security options configured](../screenshots/02-dc/gpo-banner-settings.png)
+
+4. Ran `gpupdate /force` on `CLIENT01` and confirmed the warning banner appears before sign-in.
+
+![Logon banner displayed on CLIENT01](../screenshots/02-dc/gpo-banner-verify.png)

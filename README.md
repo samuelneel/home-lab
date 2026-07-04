@@ -1,10 +1,11 @@
-# Active Directory & SOC Detection Home Lab
+# Active Directory & ML Log Analysis Home Lab
 
-> 🚧 **Status:** In progress — Phase 2 (SOC Detection) underway.
+> 🚧 **Status:** Phase 1 complete — Phase 2 (ML-based log analysis) planned.
 
 A virtualized lab simulating a small corporate network, built to practice the core skills behind
-IT support and security operations: Active Directory administration, endpoint management, help
-desk ticketing, log collection, and threat detection.
+IT support and data-driven operations: Active Directory administration, endpoint management, help
+desk ticketing, and log analysis with Python — using the lab's own Windows event logs as a real
+dataset for anomaly detection.
 
 ## Documentation
 
@@ -57,8 +58,8 @@ desk ticketing, log collection, and threat detection.
 - **Domain Controller:** Windows Server 2022 (Evaluation edition, free 180 days)
 - **Client:** Windows 11
 - **Ticketing:** Spiceworks Cloud Help Desk (free, cloud-hosted)
-- **SIEM (Phase 2):** Splunk Free or Wazuh
-- **Attack simulation (Phase 2):** manual failed-logon attempts / Atomic Red Team
+- **Log analysis (Phase 2):** Python, pandas, matplotlib, scikit-learn, Jupyter
+- **Data generation (Phase 2):** PowerShell (`Get-WinEvent`), manual failed-logon attempts
 
 ## Phase 1 — Active Directory & Help Desk
 
@@ -69,12 +70,15 @@ desk ticketing, log collection, and threat detection.
 - [x] Configured a Group Policy (e.g., password complexity, login banner)
 - [x] Stood up Spiceworks Cloud Help Desk and resolved a simulated account-lockout ticket end to end (open → assign → fix in AD → close)
 
-## Phase 2 — SOC Detection (planned)
+## Phase 2 — ML Log Analysis: Anomaly Detection on Logon Events (planned)
 
-- [ ] Deploy the SIEM VM and forward Windows event logs from the client and DC
-- [ ] Generate activity, including repeated failed logons to simulate a brute-force attempt
-- [ ] Search the logs and build an alert/detection for the failed-logon pattern (Windows Event ID 4625)
-- [ ] Document the investigation: what the alert caught, how it was confirmed, and what a defender would do next
+- [ ] Generate activity on the domain, including repeated failed logons to simulate a brute-force attempt
+- [ ] Export Windows Security event logs from DC01 and CLIENT01 to CSV using PowerShell (`Get-WinEvent`)
+- [ ] Parse and clean the logs in Python with pandas (event ID, account, source host, timestamp)
+- [ ] Engineer features from the raw events (e.g., failed logons per account per time window) and establish a baseline of normal logon behavior
+- [ ] Detect the brute-force pattern (Event ID 4625) two ways — a statistical threshold baseline, then a simple ML model (Isolation Forest) — and compare their results
+- [ ] Visualize logon activity and flagged anomalies over time with matplotlib
+- [ ] Document the full analysis in a Jupyter notebook: what was flagged, false positives, and how detection quality was evaluated
 
 ## Skills Demonstrated
 
@@ -84,11 +88,11 @@ desk ticketing, log collection, and threat detection.
 - Networking: VirtualBox NAT Network, static IP assignment, DNS configuration (TCP/IP)
 - Group Policy configuration (password policy, login banner)
 - Help desk operations: account creation, password resets, lockouts; full ticket lifecycle in Spiceworks
-- *(Phase 2)* Log collection and analysis with a SIEM; detecting and investigating a simulated attack
+- *(Phase 2)* Data analysis with Python and pandas; feature engineering and anomaly detection on real Windows event logs; data visualization and notebook-based documentation
 
 ## Future Improvements
 
-- Add a firewall (pfSense) and segment the network
-- Add a Linux endpoint and forward its logs
 - Automate user creation with a PowerShell script
+- Schedule recurring activity generation to grow the log dataset over time
+- Try additional models on the logon data and compare against the Isolation Forest baseline
 - Extend identity into the cloud with Microsoft Entra ID (synced to on-prem AD via Entra Connect)
